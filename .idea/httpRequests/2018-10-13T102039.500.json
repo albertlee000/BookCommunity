@@ -1,0 +1,19 @@
+<h1>Cannot use &#39;in&#39; operator to search for &#39;strict&#39; in true</h1>
+<h2></h2>
+<pre>TypeError: Cannot use &#39;in&#39; operator to search for &#39;strict&#39; in true
+at _update (D: \lzh\Assignment 1\node_modules\mongoose\lib\query.js:3635: 18)
+at model.Query.Query.update (D: \lzh\Assignment 1\node_modules\mongoose\lib\query.js: 3450: 10)
+at _update (D: \lzh\Assignment 1\node_modules\mongoose\lib\model.js: 3129: 16)
+at Function.update (D: \lzh\Assignment 1\node_modules\mongoose\lib\model.js: 3037: 10)
+at router.writeReview (D:\lzh\Assignment 1\routes\books.js:156: 10)
+at Layer.handle [as handle_request] (D: \lzh\Assignment 1\node_modules\express\lib\router\layer.js: 95:5)
+at next (D: \lzh\Assignment 1\node_modules\express\lib\router\route.js: 137: 13)
+at Route.dispatch (D: \lzh\Assignment 1\node_modules\express\lib\router\route.js: 112: 3)
+at Layer.handle [as handle_request] (D: \lzh\Assignment 1\node_modules\express\lib\router\layer.js: 95:5)
+at D: \lzh\Assignment 1\node_modules\express\lib\router\index.js:281: 22
+at param (D: \lzh\Assignment 1\node_modules\express\lib\router\index.js: 354: 14)
+at param (D:\lzh\Assignment 1\node_modules\express\lib\router\index.js: 365: 14)
+at Function.process_params (D: \lzh\Assignment 1\node_modules\express\lib\router\index.js: 410: 3)
+at next (D: \lzh\Assignment 1\node_modules\express\lib\router\index.js: 275: 10)
+at D: \lzh\Assignment 1\node_modules\express\lib\router\index.js: 635: 15
+at next (D: \lzh\Assignment 1\node_modules\express\lib\router\index.js: 260: 14)</pre>
