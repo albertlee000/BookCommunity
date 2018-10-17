@@ -7,8 +7,13 @@
 let mongoose = require('mongoose');
 let BookSchema = new mongoose.Schema({
         name: String,
-        recommended: {type: Number, default: 0},
-        review:String
+        author:{type:String,_id:false},
+        like: {type: Number, default: 0},
+        review:[{
+            content:{type:String,default:null},
+            reviewer:{type:String,default:null},
+
+        }]
     },
     { collection: 'booksdb' });
 module.exports = mongoose.model('Book', BookSchema);

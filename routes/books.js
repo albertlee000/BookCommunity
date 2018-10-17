@@ -58,12 +58,12 @@ router.findBookByID = (req,res)=>{
             res.send(JSON.stringify(book,null,5));
     });
 }
-//get all books' recommendeds
-router.getRecommends = (req,res)=>{
+//find all books' by likes
+router.findBookByLike = (req,res)=>{
     res.setHeader('Content-Type','application/json');
 
-    //find all books that their recommendes  are bigger or equal to requested value
-    Book.find({ "recommended" : {"$gte":req.params.recommended} },function(err,book) {
+    //find all books that their likes  are bigger or equal to requested value
+    Book.find({ "like" : {"$gte":req.params.like} },function(err,book) {
 
         res.send(JSON.stringify(book,null,5));
     });
@@ -86,7 +86,7 @@ router.addBook = (req, res) => {
     var book = new Book();
     book._id = req.body.id;
     book.name = req.body.name;
-    book.recommended = req.body.recommended;
+    book.like = req.body.like;
     book.save();
     Book.find({ "_id" : req.body.id },function(err, book) {
         if (err)
@@ -96,45 +96,45 @@ router.addBook = (req, res) => {
     });
 
 }
-//increase recommended
-router.increaseRecommended = (req, res) => {
+//increase like
+router.increaseLike = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    Book.findById(req.params.id , function(err,book) {
+    Book.find(req.params.name , function(err,book) {
         if (err)
             res.send({message:'Book NOT Found!'});
         else {
-            book.recommended += 1;
+            book.like += 1;
             book.save(function (err) {
                 if (err)
-                    res.send('Recommended NOT Successful!');
+                    res.send('Like NOT Successful!');
                 else
-                    res.send('Recommended successfully!');
+                    res.send('Like successfully!');
             });
         }
     });
 }
-//cancel recommended
-router.cancelRecommended = (req, res) => {
+//cancel like
+router.cancelLike = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     var canCancel = false;
-    //make sure recommended can be cancelled
+    //make sure like can be cancelled
     Book.findById(req.params.id , function(err,book) {
-        if(book.recommended>0){
+        if(book.like>0){
             canCancel = true;
         }
     });
     Book.findById(req.params.id , function(err,book) {
         if(canCancel == true){
-            book.recommended -= 1;
+            book.like -= 1;
             book.save(function (err) {
                 if (err)
-                    res.send('Cannot cancel recommended!');
+                    res.send('Cannot cancel like!');
                 else
-                    res.send('recommended cancelled!');
+                    res.send('like cancelled!');
             })
         }
         else
-            res.send('You have not recomended!')
+            res.send('You have not liked!')
     });
 }
 //write books' reviews

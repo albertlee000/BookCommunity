@@ -27,13 +27,14 @@ app.get('/books/id=:id', books.findBookByID);//find BOOK by ID
 app.get('/books/name=:name', books.findBookByName);//find BOOK by NAME
 app.get('/users/id=:id', users.findUserByID);//find USER by ID
 app.get('/users/acc=:account', users.findUserByAccount);//find USER by ACCOUNT
-app.get('/books/recommendeds=:recommended',books.getRecommends);
+app.get('/books/like=:like',books.findBookByLike);
 app.post('/books/addBook',books.addBook);//ADD BOOKS
 app.post('/users/addUser',users.addUser);//ADD USERS
-app.put('/books/recomUp=:id',books.increaseRecommended);
-app.put('/books/recomDown=:id',books.cancelRecommended);
+app.put('/books/recomUp=:id',books.increaseLike);
+app.put('/books/recomDown=:id',books.cancelLike);
 app.put('/books/writeReview=:id',books.writeReview);
 app.put('/books/cancelReview=:id',books.cancelReview);
+app.put('/users/recommende=:id',users.Recommende);
 app.delete('/books/id=:id',books.deleteByID);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

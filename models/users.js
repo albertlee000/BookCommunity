@@ -1,11 +1,11 @@
 let mongoose = require('mongoose');
 let UserSchema = new mongoose.Schema({
-        account:String,
-        psw:String,
+        account:{type:String,required:true,unique:true},
+        psw:{type:String,required:true,unique:true},
         email:String,
         recommendation:[{
-            bookname:String,
-            review:String
+            bookname:{type:String,default:null},
+            _id:false
         }]
 
     },

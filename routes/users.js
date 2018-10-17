@@ -1,4 +1,5 @@
 let User = require('../models/users');
+let Book = require('../models/books');
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -13,7 +14,7 @@ db.on('error', function (err) {
 db.once('open', function () {
     console.log('Successfully Connected to [ ' + db.name + ' ]');
 });
-
+//add users
 router.addUser = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     var user = new User();
@@ -48,21 +49,58 @@ router.findUserByAccount = (req,res)=>{
             res.send(JSON.stringify(user,null,5));
     });
 }
-//do recommende
-// router.Recommende = (req, res) => {
-//     res.setHeader('Content-Type', 'application/json');
-//     User.findById(req.params.id , function(err,book) {
-//         if (err)
-//             res.send({message:'Book NOT Found!'});
-//         else {
-//             book.recommended += 1;
-//             book.save(function (err) {
-//                 if (err)
-//                     res.send('Recommended NOT Successful!');
-//                 else
-//                     res.send('Recommended successfully!');
-//             });
-//         }
-//     });
-// }
+//recommende books
+router.Recommende = (req, res) => {
+    let userId = req.params.id;
+    let bookName = req.body.bookname;
+    res.setHeader('Content-Type', 'application/json');
+    //first time write reviews will add like once
+    if(Book.find({'name':bookName}) != null){
+        //add review to Book
+        User.findOne({"_id":userId},function (err,user) {
+            let first = true;
+            for(i = 0; i < user.recommendation.length;i++){
+                if(user.recommendation[i].bookname == bookName)
+                    first = false;
+            }
+            console.log(first);
+            console.log(user)
+            if(first == true){
+                Book.findOneAndUpdate({"name":bookName}, {
+                    $addToSet: {
+                        review: {
+                            "content": req.body.review,
+                            "reviewer":user.account
+                        }
+                    }
+                }, function (err) {});
+                Book.findOneAndUpdate({'name':bookName},{$inc:{'like':1}},function(err){});
+            }
+            else{
+                Book.findOneAndUpdate({"name":bookName}, {
+                    $addToSet: {
+                        review: {
+                            "content": req.body.review,
+                            "reviewer":user.account
+                        }
+                    }
+                }, function (err) {});
+            }
+        });
+        User.findByIdAndUpdate(userId, {
+            $addToSet: {
+                recommendation: {
+                    "bookname": bookName
+                }
+            }
+        }, function (err) {
+            if (err)
+                res.send('Sorry! Try it again!');
+            else
+                res.send('You recommended [' + bookName + ']');
+        })
+    }
+    else
+        res.send('Book NOT Found!');
+}
 module.exports = router;
