@@ -38,7 +38,7 @@ router.findAllBooks = (req, res) => {
         res.send(JSON.stringify(book,null,5));
     });
 }
-//find books by name
+//find books by name (fuzzy search)
 router.findBookByName = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     Book.find({"name": {$regex: req.params.name, $options:'i'}},function(err, book) {
@@ -58,17 +58,16 @@ router.findBookByID = (req,res)=>{
             res.send(JSON.stringify(book,null,5));
     });
 }
-//find all books' by likes
+//find all books' whose likes are greater than the input number
 router.findBookByLike = (req,res)=>{
     res.setHeader('Content-Type','application/json');
-
     //find all books that their likes  are bigger or equal to requested value
     Book.find({ "like" : {"$gte":req.params.like} },function(err,book) {
-
         res.send(JSON.stringify(book,null,5));
     });
 
 }
+
 //delete book by id
 router.deleteByID = (req,res)=>{
     res.setHeader('Content-Type','application/json');
@@ -96,23 +95,7 @@ router.addBook = (req, res) => {
     });
 
 }
-//increase like
-router.increaseLike = (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    Book.find(req.params.name , function(err,book) {
-        if (err)
-            res.send({message:'Book NOT Found!'});
-        else {
-            book.like += 1;
-            book.save(function (err) {
-                if (err)
-                    res.send('Like NOT Successful!');
-                else
-                    res.send('Like successfully!');
-            });
-        }
-    });
-}
+
 
 //write books' reviews
 router.writeReview = (req, res) => {
@@ -124,6 +107,7 @@ router.writeReview = (req, res) => {
             res.send('Review wrote successfully!!');
     })
 }
+//clear a book's all reviews
 router.cancelReview = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     Book.findByIdAndUpdate(req.params.id, {$set:{review:""}}, function(err){

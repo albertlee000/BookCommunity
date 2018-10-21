@@ -30,7 +30,7 @@ app.get('/users/acc=:account', users.findUserByAccount);//find USER by ACCOUNT
 app.get('/books/like=:like',books.findBookByLike);
 app.post('/books/addBook',books.addBook);//ADD BOOKS
 app.post('/users/addUser',users.addUser);//ADD USERS
-app.put('/books/recomUp=:id',books.increaseLike);
+app.put('/users/like=:id',users.increaseLike);
 app.put('/users/unlike=:id',users.cancelLike);
 app.put('/books/writeReview=:id',books.writeReview);
 app.put('/books/cancelReview=:id',books.cancelReview);
