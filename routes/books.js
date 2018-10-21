@@ -113,30 +113,7 @@ router.increaseLike = (req, res) => {
         }
     });
 }
-//cancel like
-router.cancelLike = (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    var canCancel = false;
-    //make sure like can be cancelled
-    Book.findById(req.params.id , function(err,book) {
-        if(book.like>0){
-            canCancel = true;
-        }
-    });
-    Book.findById(req.params.id , function(err,book) {
-        if(canCancel == true){
-            book.like -= 1;
-            book.save(function (err) {
-                if (err)
-                    res.send('Cannot cancel like!');
-                else
-                    res.send('like cancelled!');
-            })
-        }
-        else
-            res.send('You have not liked!')
-    });
-}
+
 //write books' reviews
 router.writeReview = (req, res) => {
     res.setHeader('Content-Type', 'application/json');

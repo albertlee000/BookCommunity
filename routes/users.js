@@ -63,8 +63,7 @@ router.Recommende = (req, res) => {
                 if(user.recommendation[i].bookname == bookName)
                     first = false;
             }
-            console.log(first);
-            console.log(user)
+
             if(first == true){
                 Book.findOneAndUpdate({"name":bookName}, {
                     $addToSet: {
@@ -75,6 +74,13 @@ router.Recommende = (req, res) => {
                     }
                 }, function (err) {});
                 Book.findOneAndUpdate({'name':bookName},{$inc:{'like':1}},function(err){});
+                User.findByIdAndUpdate(userId,{
+                    $addToSet: {
+                        like: {
+                            "bookname":bookName
+                        }
+                    }
+                },function (err) {});
             }
             else{
                 Book.findOneAndUpdate({"name":bookName}, {
@@ -102,5 +108,34 @@ router.Recommende = (req, res) => {
     }
     else
         res.send('Book NOT Found!');
+}
+//cancel like
+router.cancelLike = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    var canCancel = false;
+    var bookName = req.query.bookname;
+    var id = req.params.id;
+    //make sure like can be cancelled
+    User.findById(id , function(err,user) {
+
+        for(i = 0; i < user.like.length;i++){
+            console.log(user.like[i].bookname)
+            console.log(bookName)
+            if(user.like[i].bookname == bookName) {
+                canCancel = true;
+            }
+        }
+    });
+
+    //update Userdb and Bookdb after unliked
+    Book.find({"name":bookName} , function(err) {
+        if(canCancel == true){
+            User.update({"_id":id},{$pull:{like:{"bookname":bookName}}},function (err){});
+            Book.update({"name":bookName},{$inc:{'like':-1}},function (err){});
+            res.send('You unliked this book');
+        }
+        else
+            res.send('You do not like this book!')
+    });
 }
 module.exports = router;

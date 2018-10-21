@@ -12,7 +12,7 @@ let BookSchema = new mongoose.Schema({
         review:[{
             content:{type:String,default:null},
             reviewer:{type:String,default:null},
-
+            _id:false
         }]
     },
     { collection: 'booksdb' });

@@ -6,6 +6,10 @@ let UserSchema = new mongoose.Schema({
         recommendation:[{
             bookname:{type:String,default:null},
             _id:false
+        }],
+        like:[{
+            bookname:{type:String,default:null},
+            _id:false
         }]
 
     },

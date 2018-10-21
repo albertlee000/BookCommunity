@@ -31,7 +31,7 @@ app.get('/books/like=:like',books.findBookByLike);
 app.post('/books/addBook',books.addBook);//ADD BOOKS
 app.post('/users/addUser',users.addUser);//ADD USERS
 app.put('/books/recomUp=:id',books.increaseLike);
-app.put('/books/recomDown=:id',books.cancelLike);
+app.put('/users/unlike=:id',users.cancelLike);
 app.put('/books/writeReview=:id',books.writeReview);
 app.put('/books/cancelReview=:id',books.cancelReview);
 app.put('/users/recommende=:id',users.Recommende);
