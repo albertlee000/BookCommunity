@@ -58,7 +58,7 @@ router.findBookByID = (req,res)=>{
             res.send(JSON.stringify(book,null,5));
     });
 }
-//find all books' whose likes are greater than the input number
+//find all books whose likes are greater than the input number
 router.findBookByLike = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     //find all books that their likes  are bigger or equal to requested value
@@ -69,7 +69,7 @@ router.findBookByLike = (req,res)=>{
 }
 
 //delete book by id
-router.deleteByID = (req,res)=>{
+router.deleteBookByID = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     //make sure book deleted
     Book.findOneAndRemove({ "_id" : req.params.id },function(err) {
@@ -83,15 +83,15 @@ router.deleteByID = (req,res)=>{
 router.addBook = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     var book = new Book();
-    book._id = req.body.id;
-    book.name = req.body.name;
-    book.like = req.body.like;
-    book.save();
-    Book.find({ "_id" : req.body.id },function(err, book) {
+    book.name = req.body.bookname;
+    book.author = req.body.author;
+    book.review = req.body.review;
+    book.save(function(err, book) {
         if (err)
-            res.json({ message: 'Book NOT Added!', errmsg : err } );
+            res.json({message: 'Book NOT Added!', msg: err});
         else
-            res.json({ message: 'Book Successfully Added!', data: book });
+            res.json({message: 'Book Successfully Added!', data: book});
+
     });
 
 }

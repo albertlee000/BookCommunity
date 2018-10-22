@@ -22,20 +22,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 app.get('/books', books.findAllBooks);
 app.get('/books/id=:id', books.findBookByID);//find BOOK by ID
 app.get('/books/name=:name', books.findBookByName);//find BOOK by NAME
 app.get('/users/id=:id', users.findUserByID);//find USER by ID
 app.get('/users/acc=:account', users.findUserByAccount);//find USER by ACCOUNT
 app.get('/books/like=:like',books.findBookByLike);
+app.get('/users/findreview=:account',users.findOnesReviews);
+
 app.post('/books/addBook',books.addBook);//ADD BOOKS
 app.post('/users/addUser',users.addUser);//ADD USERS
+
 app.put('/users/like=:id',users.increaseLike);
 app.put('/users/unlike=:id',users.cancelLike);
 app.put('/books/writeReview=:id',books.writeReview);
 app.put('/books/cancelReview=:id',books.cancelReview);
 app.put('/users/recommende=:id',users.Recommende);
-app.delete('/books/id=:id',books.deleteByID);
+
+app.delete('/books/id=:id',books.deleteBookByID);
+app.delete('/users/id=:id',users.deleteUserByID);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

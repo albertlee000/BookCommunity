@@ -1,0 +1,16 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "like": 0,
+    "_id": "5bcd991da5f73232900f3bcc",
+    "review": [
+      {
+        "content": "ll",
+        "reviewer": "asd"
+      }
+    ],
+    "name": "something",
+    "author": "aaa",
+    "__v": 0
+  }
+}

@@ -21,13 +21,13 @@ router.addUser = (req, res) => {
     user.account = req.body.account;
     user.psw = req.body.psw;
     user.email = req.body.email;
-    user.save();
-    User.find({ "account" : req.body.account },function(err, user) {
+    user.save(function(err, user) {
         if (err)
             res.json({ message: 'User created failed...', errmsg : err } );
         else
             res.json({ message: 'User created successfully!', data: user });
     });
+
 }
 //find users by id
 router.findUserByID = (req,res)=>{
@@ -49,17 +49,28 @@ router.findUserByAccount = (req,res)=>{
             res.send(JSON.stringify(user,null,5));
     });
 }
+//delete users by id
+router.deleteUserByID = (req,res)=>{
+    res.setHeader('Content-Type','application/json');
+    //make sure book deleted
+    Book.findOneAndRemove({ "_id" : req.params.id },function(err) {
+        if (err)
+            res.json({ message: 'User delete failed!'});
+        else
+            res.json({ message: 'User delete successully!'});
+    });
+}
 //recommende books
 router.Recommende = (req, res) => {
     let userId = req.params.id;
-    let bookName = req.query.bookname;
-    let review = req.query.review;
+    let bookName = req.body.bookname;
+    let review = req.body.review;
     res.setHeader('Content-Type', 'application/json');
     //first time write reviews will add like once
     if(Book.find({'name':bookName}) != null){
         //add review to Book
         User.findOne({"_id":userId},function (err,user) {
-            let first = true;
+            let first = true;//check if first time write review
             for(i = 0; i < user.recommendation.length;i++){
                 if(user.recommendation[i].bookname == bookName)
                     first = false;
@@ -159,5 +170,17 @@ router.cancelLike = (req, res) => {
         else
             res.send('You have not liked this book!')
     });
+}
+//find a user's all reviews
+router.findOnesReviews = (req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    User.findOne({'account':req.params.account})
+        .populate({path:'books',select:'name author review',match:{review:{'reviewer':req.params.account}}})
+        .exec(function (err,reviews) {
+            if(err)
+                res.send('Sorry! Cannot find out reviews'+{msg:err})
+            else
+                res.json(reviews)
+        })
 }
 module.exports = router;

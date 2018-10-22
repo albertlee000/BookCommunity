@@ -1,0 +1,10 @@
+{
+  "message": "Book NOT Added!",
+  "msg": {
+    "driver": true,
+    "name": "MongoError",
+    "index": 0,
+    "code": 11000,
+    "errmsg": "E11000 duplicate key error index: book.books.$review.content_1 dup key: { : null }"
+  }
+}

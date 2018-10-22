@@ -6,14 +6,16 @@
 //     {id:10006,name:"\"This is my life\"",recommended:400}];
 let mongoose = require('mongoose');
 let BookSchema = new mongoose.Schema({
-        name: String,
-        author:{type:String,_id:false},
+
+        name: {type:String,required:true},
+        author:{type:String,required:true},
         like: {type: Number, default: 0},
         review:[{
-            content:{type:String,default:null},
+            content:{type:String,default: null},
             reviewer:{type:String,default:null},
             _id:false
         }]
+
     },
-    { collection: 'booksdb' });
+    { collection: 'books' });
 module.exports = mongoose.model('Book', BookSchema);

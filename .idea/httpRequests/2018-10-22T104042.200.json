@@ -1,0 +1,10 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "like": 0,
+    "_id": "5bcd9b1ae1115f0f84170c1d",
+    "name": "we",
+    "author": "smith",
+    "__v": 0
+  }
+}
