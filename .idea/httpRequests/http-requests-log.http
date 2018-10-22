@@ -1,3 +1,47 @@
+DELETE http://localhost:3000/users/id=5bcccd560d950506a46209ae
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+ {"bookname":"ssss","review":"good"}
+
+<> 2018-10-22T082157.200.json
+
+###
+
+DELETE http://localhost:3000/books/id=5bcd9bea22e8fe1308ca5ca2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+ {"bookname":"ssss","review":"good"}
+
+<> 2018-10-22T082123.200.json
+
+###
+
+DELETE http://localhost:3000/users/id=5bcce4133580bf161cd50c29
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+ {"bookname":"ssss","review":"good"}
+
+<> 2018-10-22T081902.200.json
+
+###
+
+DELETE http://localhost:3000/users/delete=5bcce4133580bf161cd50c29
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+ {"bookname":"ssss","review":"good"}
+
+<> 2018-10-22T081851.404.html
+
+###
+
 GET http://localhost:3000/users/findreview=yyf
 Accept: */*
 Cache-Control: no-cache
@@ -497,48 +541,6 @@ Content-Type: application/json
 {"bookname":"US","review":"123"}
 
 <> 2018-10-22T093259.404.html
-
-###
-
-GET http://localhost:3000/users/findreview=qwer?bookname=Heat and Dust&author=Евге́ний Ива́нович Замя́тин&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-<> 2018-10-21T103218.200.json
-
-###
-
-GET http://localhost:3000/users/findreview=qwer?bookname=Heat and Dust&author=Евге́ний Ива́нович Замя́тин&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-<> 2018-10-21T103119.200.json
-
-###
-
-GET http://localhost:3000/users/findreview="qwer"?bookname=Heat and Dust&author=Евге́ний Ива́нович Замя́тин&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-###
-
-GET http://localhost:3000/users/findreview=qwer?bookname=Heat and Dust&author=Евге́ний Ива́нович Замя́тин&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-<> 2018-10-21T103105.200.json
 
 ###
 

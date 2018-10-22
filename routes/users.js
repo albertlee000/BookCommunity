@@ -53,7 +53,7 @@ router.findUserByAccount = (req,res)=>{
 router.deleteUserByID = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     //make sure book deleted
-    Book.findOneAndRemove({ "_id" : req.params.id },function(err) {
+    User.findOneAndRemove({ "_id" : req.params.id },function(err) {
         if (err)
             res.json({ message: 'User delete failed!'});
         else
