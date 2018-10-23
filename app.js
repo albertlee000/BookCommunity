@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
 const books = require("./routes/books");
 const users = require("./routes/users");
 // view engine setup
@@ -29,7 +30,8 @@ app.get('/books/name=:name', books.findBookByName);//find BOOK by NAME
 app.get('/users/id=:id', users.findUserByID);//find USER by ID
 app.get('/users/acc=:account', users.findUserByAccount);//find USER by ACCOUNT
 app.get('/books/like=:like',books.findBookByLike);
-app.get('/users/findreview=:account',users.findOnesReviews);
+app.get('/users/findreview=:id',users.findOnesReviews);
+app.get('/users/rank',users.rankBookByLikes);
 
 app.post('/books/addBook',books.addBook);//ADD BOOKS
 app.post('/users/addUser',users.addUser);//ADD USERS

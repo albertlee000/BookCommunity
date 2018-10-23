@@ -23,7 +23,7 @@ router.addUser = (req, res) => {
     user.email = req.body.email;
     user.save(function(err, user) {
         if (err)
-            res.json({ message: 'User created failed...', errmsg : err } );
+            res.json({ message: 'User created failed...' ,err: err });
         else
             res.json({ message: 'User created successfully!', data: user });
     });
@@ -64,6 +64,7 @@ router.deleteUserByID = (req,res)=>{
 router.Recommende = (req, res) => {
     let userId = req.params.id;
     let bookName = req.body.bookname;
+    let bookId = req.body.id;
     let review = req.body.review;
     res.setHeader('Content-Type', 'application/json');
     //first time write reviews will add like once
@@ -71,9 +72,11 @@ router.Recommende = (req, res) => {
         //add review to Book
         User.findOne({"_id":userId},function (err,user) {
             let first = true;//check if first time write review
+
             for(i = 0; i < user.recommendation.length;i++){
-                if(user.recommendation[i].bookname == bookName)
+                if(user.recommendation[i] == bookId){
                     first = false;
+                }
             }
 
             if(first == true){
@@ -86,13 +89,7 @@ router.Recommende = (req, res) => {
                     }
                 }, function (err) {});
                 Book.findOneAndUpdate({'name':bookName},{$inc:{'like':1}},function(err){});
-                User.findByIdAndUpdate(userId,{
-                    $addToSet: {
-                        like: {
-                            "bookname":bookName
-                        }
-                    }
-                },function (err) {});
+                User.findByIdAndUpdate(userId,{$addToSet: {like:bookName}},function (err) {});
             }
             else{
                 Book.findOneAndUpdate({"name":bookName}, {
@@ -104,22 +101,23 @@ router.Recommende = (req, res) => {
                     }
                 }, function (err) {});
             }
+
         });
         User.findByIdAndUpdate(userId, {
             $addToSet: {
-                recommendation: {
-                    "bookname": bookName
-                }
+                recommendation:bookId
+
             }
         }, function (err) {
             if (err)
-                res.send('Sorry! Try it again!');
+                res.send('Sorry!'+ err);
             else
                 res.send('You recommended [' + bookName + ']');
         })
     }
     else
         res.send('Book NOT Found!');
+
 }
 //increase like
 router.increaseLike = (req, res) => {
@@ -174,13 +172,24 @@ router.cancelLike = (req, res) => {
 //find a user's all reviews
 router.findOnesReviews = (req,res)=>{
     res.setHeader('Content-Type', 'application/json');
-    User.findOne({'account':req.params.account})
-        .populate({path:'books',select:'name author review',match:{review:{'reviewer':req.params.account}}})
+    let uid = req.params.id;
+    User.findOne({'_id':uid})
+        .populate({path:'recommendation',select:"name author review"})
         .exec(function (err,reviews) {
             if(err)
-                res.send('Sorry! Cannot find out reviews'+{msg:err})
+                res.send('Sorry! Cannot find out reviews '+ err)
             else
-                res.json(reviews)
+                res.send(JSON.stringify(reviews,null,5))
         })
+}
+//rank all books according to likes in descending order
+router.rankBookByLikes = (req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    Book.find().sort({'like':-1}).exec(function (err,books) {
+        if(err)
+            res.json(err)
+        else
+            res.send(JSON.stringify(books,null,5))
+    })
 }
 module.exports = router;

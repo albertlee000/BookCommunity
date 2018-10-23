@@ -1,44 +1,302 @@
-DELETE http://localhost:3000/users/id=5bcccd560d950506a46209ae
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47?account=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"me","review":"55555","id":"5bce51836436e42a00965e50"}
 
-<> 2018-10-22T082157.200.json
+<> 2018-10-23T092330.200.json
 
 ###
 
-DELETE http://localhost:3000/books/id=5bcd9bea22e8fe1308ca5ca2
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47?account=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"me","review":"55555","id":"5bce51836436e42a00965e50"}
 
-<> 2018-10-22T082123.200.json
+<> 2018-10-23T092215.200.json
 
 ###
 
-DELETE http://localhost:3000/users/id=5bcce4133580bf161cd50c29
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47?account=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"me","review":"55555","id":"5bce51836436e42a00965e50"}
 
-<> 2018-10-22T081902.200.json
+<> 2018-10-23T092147.200.json
 
 ###
 
-DELETE http://localhost:3000/users/delete=5bcce4133580bf161cd50c29
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47?account=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"me","review":"55555","id":"5bce51836436e42a00965e50"}
 
-<> 2018-10-22T081851.404.html
+<> 2018-10-23T092059.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce50fc6436e42a00965e48?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"niihgig","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T091556.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce50fc6436e42a00965e48?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"review":"niihgig","id":"5bce51836436e42a00965e50"}
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce50fc6436e42a00965e48?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"review":"niihgig","id":"5bce51836436e42a00965e50"}
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce50fc6436e42a00965e48?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"niihgig","id":"5bce51836436e42a00965e50"}
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T091211.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T091133.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T091049.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce51096436e42a00965e49?account=nb
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T091014.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce51096436e42a00965e49?account=nb
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T090913.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce51096436e42a00965e49?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T090638.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce51096436e42a00965e49?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd","id":"5bce51836436e42a00965e50"}
+
+<> 2018-10-23T090630.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce51096436e42a00965e49?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nmbd"}
+
+<> 2018-10-23T090533.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce51096436e42a00965e49?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"dddd"}
+
+<> 2018-10-23T090028.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce51096436e42a00965e49?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"dddd"}
+
+<> 2018-10-23T085954.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bce51096436e42a00965e49?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"they","review":"nihaoma"}
+
+<> 2018-10-23T085857.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T085734.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T085647.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T085350.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T085330.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=5bce50ed6436e42a00965e47?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T085217.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T084755.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T084747.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T084738.200.json
+
+###
+
+GET http://localhost:3000/users/findreview=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T083526.200.json
 
 ###
 
@@ -47,500 +305,240 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T110352.200.json
+<> 2018-10-23T083521.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview=yyf
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T110228.200.json
+<> 2018-10-23T083329.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview=yyf
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T114028.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview=yyf
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T110119.200.json
+<> 2018-10-23T114008.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview='yyf'
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T110109.200.json
+<> 2018-10-23T114000.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview='yyf'
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T110021.200.json
+<> 2018-10-23T113943.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview="yyf"
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
+
+<> 2018-10-23T111755.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview=yyf
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105925.200.json
+<> 2018-10-23T111604.200.json
 
 ###
 
-GET http://localhost:3000/books/like=0
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105656.200.json
+<> 2018-10-23T111455.200.json
 
 ###
 
-GET http://localhost:3000/books/like=1
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105635.200.json
+<> 2018-10-23T111034.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview=yyf
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105244.200.json
+<> 2018-10-23T110932.200.json
 
 ###
 
-GET http://localhost:3000/users/findreview=yyf
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105239.200.json
+<> 2018-10-23T110437.200.json
 
 ###
 
-DELETE http://localhost:3000/users/id=5bcccd560d950506a46209ae
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105102.200.json
+<> 2018-10-23T105911.200.json
 
 ###
 
-DELETE http://localhost:3000/users/id=5bcccd560d950506a46209ae
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T105005.200.json
+<> 2018-10-23T102500.200.json
 
 ###
 
-PUT http://localhost:3000/users/recommende=5bcce4133580bf161cd50c29
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T104918.200.json
+<> 2018-10-23T092106.200.json
 
 ###
 
-PUT http://localhost:3000/users/recommende=5bcce4133580bf161cd50c29
+GET http://localhost:3000/users/findreview=lgd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":"good"}}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T104905.400.html
+<> 2018-10-22T114104.200.json
 
 ###
 
-PUT http://localhost:3000/users/recommende=5bcce4453580bf161cd50c2a
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
- {"bookname":"ssss","review":{"content":"good"}}
+{"bookname":"we","review":"dds"}
 
-<> 2018-10-22T104803.200.json
+<> 2018-10-22T114022.200.json
 
 ###
 
-POST http://localhost:3000/books/addBook
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"bookname":"ssss","author":"qqwe"}
+{"bookname":"me","review":"dds"}
 
-<> 2018-10-22T104410.200.json
+<> 2018-10-22T114018.200.json
 
 ###
 
-POST http://localhost:3000/books/addBook
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"bookname":"we","author":"smith"}
+{"bookname":"you","review":"dds"}
 
-<> 2018-10-22T104223.200.json
+<> 2018-10-22T114014.200.json
 
 ###
 
-POST http://localhost:3000/books/addBook
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"bookname":"you","author":"smith"}
+{"bookname":"you","review":"421421"}
 
-<> 2018-10-22T104204.200.json
+<> 2018-10-22T114011.200.json
 
 ###
 
-POST http://localhost:3000/books/addBook
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"bookname":"you","author":"smith"}
+{"bookname":"war","review":"421421"}
 
-<> 2018-10-22T104058.200.json
+<> 2018-10-22T114005.200.json
 
 ###
 
-POST http://localhost:3000/books/addBook
+PUT http://localhost:3000/users/recommende=5bce50ed6436e42a00965e47
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"bookname":"we","author":"smith"}
+{"bookname":"war","review":"421"}
 
-<> 2018-10-22T104042.200.json
-
-###
-
-POST http://localhost:3000/books/addBook
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"we","author":"smith"}
-
-<> 2018-10-22T103738.200.json
-
-###
-
-POST http://localhost:3000/books/addBook
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"we","author":"smith"}
-
-<> 2018-10-22T103709.200.json
-
-###
-
-POST http://localhost:3000/books/addBook
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"we","author":"smith"}
-
-<> 2018-10-22T103627.200.json
-
-###
-
-POST http://localhost:3000/books/addBook
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"we","author":"smith","review":[{"content":"123","reviewer":"uye"}]}
-
-<> 2018-10-22T103446.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"yyy","author":"qq","review":[{"content":"ll","reviewer":"asd"}]}
-
-<> 2018-10-22T103258.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"aaa","review":[{"content":"ll","reviewer":"asd"}]}
-
-<> 2018-10-22T103213.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"aaa","review":[{"content":"ll","reviewer":"asd"}]}
-
-<> 2018-10-22T103020.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"aaa","review":[{"content":"ll","reviewer":"asd"}]}
-
-<> 2018-10-22T102053.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"you","author":"123","review":[{"content":"null","reviewer":"null"}]}
-
-<> 2018-10-22T101942.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"you","author":"123","review":[{"content":"null","reviewer":"null"}]}
-
-<> 2018-10-22T101913.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"you","author":"123","review":[{"content":"null","reviewer":"null"}]}
-
-<> 2018-10-22T101618.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"you","author":"123","review":[{"content":"null","reviewer":"null"}]}
-
-<> 2018-10-22T101145.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":[{"content":"null","reviewer":"null"}]}
-
-<> 2018-10-22T101053.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":[{"content":null,"reviewer":null}]}
-
-<> 2018-10-22T100846.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":[{"content":null,"reviewer":null}]}
-
-<> 2018-10-22T100658.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":{"content":null,"reviewer":null}}
-
-<> 2018-10-22T100550.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":"[{"content":null,"reviewer":null}]"}
-
-<> 2018-10-22T100500.400.html
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":["content":null,"reviewer":null]}
-
-<> 2018-10-22T100351.400.html
-
-###
-
-POST http://localhost:3000/books/addBook?account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony","review":["content":null,"reviewer":null]}
-
-<> 2018-10-22T100120.400.html
-
-###
-
-POST http://localhost:3000/books/addBook?bookname=We&author=Anony&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"something","author":"anony"}
-
-<> 2018-10-22T095858.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?bookname=We&author=Anony&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"Us","author":"anony"}
-
-<> 2018-10-22T095838.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?bookname=We&author=Anony&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-<> 2018-10-22T095510.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?bookname=We&author=Anony&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-<> 2018-10-22T093320.200.json
-
-###
-
-GET http://localhost:3000/books/addBook?bookname=We&author=Anony&account=hhm&psw=798456123&email=uqe@sina.com&review=hard to read but amazing
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"US","review":"123"}
-
-<> 2018-10-22T093259.404.html
+<> 2018-10-22T114001.200.json
 
 ###
 

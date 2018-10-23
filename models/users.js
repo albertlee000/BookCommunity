@@ -5,11 +5,13 @@ let UserSchema = new mongoose.Schema({
         psw:{type:String,required:true},
         email:String,
         recommendation:[{
-            bookname:{type:String,default:null,ref:'books'},
-            _id:false
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Book'
+
         }],
         like:[{
-            bookname:{type:String,default:null},
+            type:String,
+            default:null,
             _id:false
         }],
 
