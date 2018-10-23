@@ -23,9 +23,9 @@ router.addUser = (req, res) => {
     user.email = req.body.email;
     user.save(function(err, user) {
         if (err)
-            res.json({ message: 'User created failed...' ,err: err });
+            res.json({ message: 'User created failed...'});
         else
-            res.json({ message: 'User created successfully!', data: user });
+            res.json({ message: 'User created successfully!'});
     });
 
 }
