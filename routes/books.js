@@ -97,6 +97,7 @@ router.addBook = (req, res) => {
     book.name = req.body.bookname;
     book.author = req.body.author;
     book.review = req.body.review;
+    book.sumary = req.body.sumary;
     book.save(function(err, book) {
         if (err)
             res.json({message: 'Book NOT Added!', msg: err});

@@ -1,0 +1,12 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "sumary": null,
+    "like": 0,
+    "reviewer": [],
+    "_id": "5bd0d57356a059283002a2a3",
+    "name": "mer",
+    "author": "fd",
+    "__v": 0
+  }
+}

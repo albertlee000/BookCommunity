@@ -8,44 +8,42 @@ chai.use(chaiHttp);
 let _ = require('lodash' );
 describe('Users', function (){
 
-    describe('Users', function (){
-        describe('GET /users/id=:id', () => {
-            it('should return an user by id', function(done) {
-                chai.request(server)
-                    .get('/users/id=5bce50fc6436e42a00965e48')
-                    .end(function(err, res) {
-                        expect(res).to.have.status(200);
-                        expect(res.body).to.be.a('array');
-                        expect(res.body.length).to.equal(1);
-                        let result = _.map(res.body, (user) => {
-                            return { acc: user.account,
-                                psw: user.psw }
-                        });
-                        expect(result).to.include( { acc: 'yyf', psw: 'qwe' } );
-                        done();
+    describe('GET /users/id=:id', () => {
+        it('should return an user by id', function(done) {
+            chai.request(server)
+                .get('/users/id=5bd0d4e956a059283002a29b')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(1);
+                    let result = _.map(res.body, (user) => {
+                        return { acc: user.account,
+                            psw: user.psw }
                     });
-            });
+                    expect(result).to.include( { acc: 'qqq', psw: '123456' } );
+                    done();
+                });
         });
     });
-    describe('Users', function (){
-        describe('GET /users/acc=:account', () => {
-            it('should return an user by account', function(done) {
-                chai.request(server)
-                    .get('/users/acc=lgd')
-                    .end(function(err, res) {
-                        expect(res).to.have.status(200);
-                        expect(res.body).to.be.a('array');
-                        expect(res.body.length).to.equal(1);
-                        let result = _.map(res.body, (user) => {
-                            return { acc: user.account,
-                                psw: user.psw }
-                        });
-                        expect(result).to.include( { acc: 'lgd', psw: 'asdasda' } );
-                        done();
+
+    describe('GET /users/acc=:account', () => {
+        it('should return an user by account', function(done) {
+            chai.request(server)
+                .get('/users/acc=gg')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(1);
+                    let result = _.map(res.body, (user) => {
+                        return { acc: user.account,
+                            psw: user.psw }
                     });
-            });
+                    expect(result).to.include( { acc: 'gg', psw: '123456' } );
+                    done();
+                });
         });
     });
+
     describe('POST /users/addUser', function () {
         it('should return confirmation message and update datastore that add successfully', function(done) {
             let user = {
@@ -128,7 +126,7 @@ describe('Users', function (){
         it('should return a message and update datastore that user likes the book', function(done) {
             let bookname = {bookname:'you'};
             chai.request(server)
-                .put('/users/like=5bce50fc6436e42a00965e48')
+                .put('/users/like=5bd0d4f056a059283002a29c')
                 .send(bookname)
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
@@ -143,7 +141,7 @@ describe('Users', function (){
         it('should return a message and update datastore that user unlikes the book', function(done) {
             let bookname = {bookname:'you'};
             chai.request(server)
-                .put('/users/unlike=5bce50fc6436e42a00965e48')
+                .put('/users/unlike=5bd0d4f056a059283002a29c')
                 .send(bookname)
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
@@ -156,11 +154,11 @@ describe('Users', function (){
         it('should return a message and update datastore that user recommended a book and add a review to the book', function(done) {
             let recommendation = {
                 bookname: 'me' ,
-                id: '5bce51756436e42a00965e4e',
+                id: '5bd0d75aa0fa610ec0cc092b',
                 review: 'an amazing book'
             };
             chai.request(server)
-                .put('/users/recommende=5bce51096436e42a00965e49')
+                .put('/users/recommende=5bd0d4fa56a059283002a29d')
                 .send(recommendation)
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
@@ -170,14 +168,14 @@ describe('Users', function (){
         });
         after(function  (done) {
             chai.request(server)
-                .get('/books/id=5bce51756436e42a00965e4e')
+                .get('/books/id=5bd0d75aa0fa610ec0cc092b')
                 .end(function(err, res) {
                     let result = _.map(res.body, (book) => {
-                        return { content:book.review[2].content,
-                            reviewer:book.review[2].reviewer};
+                        return { content:book.review[1].content,
+                            reviewer:book.review[1].reviewer};
                     }  );
-
-                    expect(result).to.include( { content: 'an amazing book', reviewer: 'nb'  } );
+                    expect(res).to.have.status(200);
+                    expect(result).to.include( { content: 'an amazing book', reviewer: 'ter'  } );
                     done();
                 });
         });
@@ -193,6 +191,18 @@ describe('Users', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.have.property('message').equal('Sorry! Please try it again!');
+                    done();
+                });
+        });
+    });
+    describe('GET /users/rank', () => {
+        it('should return all books in descending order', function(done) {
+            chai.request(server)
+                .get('/users/rank')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body[0].name).to.include( 'you');
+                    expect(res.body[1].name).to.include('her');
                     done();
                 });
         });

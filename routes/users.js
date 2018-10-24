@@ -111,8 +111,7 @@ router.Recommende = (req, res) => {
                                 "reviewer": user.account
                             }
                         }
-                    }, function (err) {
-                    });
+                    }, function (err) {});
                 }
                 res.send({message:'You recommended [' + bookName + ']'});
             }
@@ -179,7 +178,7 @@ router.cancelLike = (req, res) => {
             res.send({message:'You have not liked this book!'})
     });
 }
-//find a user's all reviews
+//find all books that the user reviewed
 router.findOnesReviews = (req,res)=>{
     res.setHeader('Content-Type', 'application/json');
     let uid = req.params.id;
