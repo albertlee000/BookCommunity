@@ -1,3 +1,14 @@
+PUT http://localhost:3000/books/writeSumary=5bce517c6436e42a00965e4f?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"sumary":"long time ago....."}
+
+<> 2018-10-24T010432.200.json
+
+###
+
 DELETE http://localhost:3000/books/name=they?account=lgd
 Accept: */*
 Cache-Control: no-cache
@@ -510,17 +521,6 @@ Content-Type: application/json
 {"bookname":"we","review":"dds"}
 
 <> 2018-10-23T085217.200.json
-
-###
-
-GET http://localhost:3000/users/findreview=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"we","review":"dds"}
-
-<> 2018-10-23T084755.200.json
 
 ###
 

@@ -108,14 +108,14 @@ router.addBook = (req, res) => {
 }
 
 
-//write books' reviews
-router.writeReview = (req, res) => {
+//write book's sumary
+router.writeSumary = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    Book.findByIdAndUpdate(req.params.id, {$set:{review:req.body.review}}, function(err){
+    Book.findByIdAndUpdate(req.params.id, {$set:{sumary:req.body.sumary}}, function(err){
         if (err)
-            res.send('Review wrote failed...');
+            res.send({message:'Sumary wrote failed...'});
         else
-            res.send('Review wrote successfully!!');
+            res.send({message:'Sumary wrote successfully!!'});
     })
 }
 //clear a book's all reviews
@@ -123,9 +123,9 @@ router.cancelReview = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     Book.findByIdAndUpdate(req.params.id, {$set:{review:""}}, function(err){
         if (err)
-            res.send('Review canceled failed...');
+            res.send({message:'Reviews clear failed...'});
         else
-            res.send('Review cancel successfully!!');
+            res.send({message:'Reviews clear successfully!!'});
     })
 }
 module.exports = router;
