@@ -38,7 +38,7 @@ app.post('/users/addUser',users.addUser);//ADD USERS
 
 app.put('/users/like=:id',users.increaseLike);
 app.put('/users/unlike=:id',users.cancelLike);
-app.put('/books/writeSumary=:id',books.writeSumary);
+app.put('/books/writeSummary=:id',books.writeSummary);
 app.put('/books/cancelReview=:id',books.cancelReview);
 app.put('/users/recommende=:id',users.Recommende);
 

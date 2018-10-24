@@ -80,4 +80,62 @@ describe('Books', function (){
                 });
         });
     });
+    describe('GET /books/like=:like', () => {
+        it('should return all books whose likes are greater than 50', function(done) {
+            chai.request(server)
+                .get('/books/like=50')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(2);
+                    expect(res.body[0].name).to.include('you');
+                    expect(res.body[1].name).to.include('her');
+                    done();
+                });
+        });
+        it('should return no book', function(done) {
+            chai.request(server)
+                .get('/books/like=10000')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal( 'Sorry, cannot find any book has higher likes');
+                    done();
+                });
+        });
+    });
+    describe('PUT /books/writeSummary=:id', function () {
+        it('should return a successful message and update database by new summary', function(done) {
+            let summary = {summary:'a legendary story'};
+            chai.request(server)
+                .put('/books/writeSummary=5bd0d7ffa0fa610ec0cc092d')
+                .send(summary)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Summary wrote successfully!!');
+                    done();
+                });
+        });
+        after(function  (done) {
+            chai.request(server)
+                .get('/books/id=5bd0d7ffa0fa610ec0cc092d')
+                .end(function(err, res) {
+                    let result = _.map(res.body, (book) => {
+                        return { summary:book.summary };
+                    }  );
+                    expect(result).to.include( { summary:'a legendary story' } );
+                    done();
+                });
+        });
+        it('should return a failed message', function(done) {
+            let summary = {summary:'a legendary story'};
+            chai.request(server)
+                .put('/books/writeSummary=vdsfvscdf')
+                .send(summary)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Summary wrote failed...');
+                    done();
+                });
+        });
+    });
 });

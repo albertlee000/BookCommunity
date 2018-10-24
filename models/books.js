@@ -9,7 +9,7 @@ let BookSchema = new mongoose.Schema({
 
         name: {type:String,required:true},
         author:{type:String,required:true},
-        sumary:{type:String,default:null},
+        summary:{type:String,default:null},
         like: {type: Number, default: 0},
         review:[{
             content:{type:String,default: null},

@@ -1,3 +1,54 @@
+PUT http://localhost:3000/books/writeSummary=5bd0d7f7a0fa610ec0cc092c?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"summary":"this is a common story"}
+
+<> 2018-10-24T104944.200.json
+
+###
+
+PUT http://localhost:3000/books/writeSummary=5bd0d7f7a0fa610ec0cc092c?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"summary":"this is a common story"}
+
+###
+
+GET http://localhost:3000/books/like=10000?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"her","author":"mm","sumary":"hhhh"}
+
+<> 2018-10-24T104308.200.json
+
+###
+
+GET http://localhost:3000/books/like=50?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"her","author":"mm","sumary":"hhhh"}
+
+<> 2018-10-24T104100.200.json
+
+###
+
+GET'; http://localhost:3000/books/like=50?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"her","author":"mm","sumary":"hhhh"}
+
+###
+
 GET http://localhost:3000/books/name=e?account=lgd
 Accept: */*
 Cache-Control: no-cache
@@ -486,61 +537,6 @@ Content-Type: application/json
 {"bookname":"you","author":"fd"}
 
 <> 2018-10-24T092935.200.json
-
-###
-
-PUT http://localhost:3000/users/recommende=5bd0d4c856a059283002a299?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"you","author":"fd"}
-
-<> 2018-10-24T092913.200.json
-
-###
-
-PUT http://localhost:3000/users/recommende=5bd0d4c856a059283002a299?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"mer","id":"5bd0d54b56a059283002a2a0","review":"1234567"}
-
-<> 2018-10-24T092743.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"mer","author":"fd"}
-
-<> 2018-10-24T092627.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"them","author":"vvc"}
-
-<> 2018-10-24T092611.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"me","author":"wa"}
-
-<> 2018-10-24T092559.200.json
 
 ###
 

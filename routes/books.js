@@ -63,7 +63,10 @@ router.findBookByLike = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     //find all books that their likes  are bigger or equal to requested value
     Book.find({ "like" : {"$gte":req.params.like} },function(err,book) {
-        res.send(JSON.stringify(book,null,5));
+        if(err||book.length==0)
+            res.send({message:'Sorry, cannot find any book has higher likes'})
+        else
+            res.send(JSON.stringify(book,null,5));
     });
 
 }
@@ -110,13 +113,13 @@ router.addBook = (req, res) => {
 
 
 //write book's sumary
-router.writeSumary = (req, res) => {
+router.writeSummary = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    Book.findByIdAndUpdate(req.params.id, {$set:{sumary:req.body.sumary}}, function(err){
+    Book.findByIdAndUpdate(req.params.id, {$set:{summary:req.body.summary}}, function(err){
         if (err)
-            res.send({message:'Sumary wrote failed...'});
+            res.send({message:'Summary wrote failed...'});
         else
-            res.send({message:'Sumary wrote successfully!!'});
+            res.send({message:'Summary wrote successfully!!'});
     })
 }
 //clear a book's all reviews
