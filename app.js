@@ -43,7 +43,9 @@ app.put('/books/cancelReview=:id',books.cancelReview);
 app.put('/users/recommende=:id',users.Recommende);
 
 app.delete('/books/id=:id',books.deleteBookByID);
+app.delete('/books/name=:bookname',books.deleteBookByName);
 app.delete('/users/id=:id',users.deleteUserByID);
+app.delete('/users/acc=:account',users.deleteUserByAccount);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

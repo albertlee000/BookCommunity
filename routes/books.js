@@ -72,11 +72,22 @@ router.findBookByLike = (req,res)=>{
 router.deleteBookByID = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     //make sure book deleted
-    Book.findOneAndRemove({ "_id" : req.params.id },function(err) {
-        if (err)
+    Book.findOneAndRemove({ "_id" : req.params.id },function(err,data) {
+        if (err||data == null)
             res.json({ message: 'Book No.' + req.params.id + ' delete failed!'});
         else
             res.json({ message: 'Book No.' + req.params.id + ' delete successully!'});
+    });
+}
+//delete book by id
+router.deleteBookByName = (req,res)=>{
+    res.setHeader('Content-Type','application/json');
+    //make sure book deleted
+    Book.findOneAndRemove({ "name" : req.params.bookname },function(err,data) {
+        if (err||data == null)
+            res.json({ message: 'Book [.' + req.params.bookname + '] delete failed!'});
+        else
+            res.json({ message: 'Book [' + req.params.bookname + '] delete successully!'});
     });
 }
 //add a new book
