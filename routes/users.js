@@ -83,34 +83,38 @@ router.Recommende = (req, res) => {
         //add review to Book
         User.findOne({"_id":userId},function (err,user) {
             let first = true;//check if first time write review
-
-            for(i = 0; i < user.recommendation.length;i++){
-                if(user.recommendation[i] == bookId){
-                    first = false;
+            if (err)
+                res.send({message: 'Sorry! Please try it again!'});
+            else {
+                for (i = 0; i < user.recommendation.length; i++) {
+                    if (user.recommendation[i] == bookId) {
+                        first = false;
+                    }
                 }
-            }
-
-            if(first == true){
-                Book.findOneAndUpdate({"name":bookName}, {
-                    $addToSet: {
-                        review: {
-                            "content": review,
-                            "reviewer":user.account
+                if (first == true) {
+                    Book.findOneAndUpdate({"name": bookName}, {
+                        $addToSet: {
+                            review: {
+                                "content": review,
+                                "reviewer": user.account
+                            }
                         }
-                    }
-                }, function (err) {});
-                Book.findOneAndUpdate({'name':bookName},{$inc:{'like':1}},function(err){});
-                User.findByIdAndUpdate(userId,{$addToSet: {like:bookName}},function (err) {});
-            }
-            else{
-                Book.findOneAndUpdate({"name":bookName}, {
-                    $addToSet: {
-                        review: {
-                            "content": review,
-                            "reviewer":user.account
+                    }, function (err) {});
+                    Book.findOneAndUpdate({'name': bookName}, {$inc: {'like': 1}}, function (err) {});
+                    User.findByIdAndUpdate(userId, {$addToSet: {like: bookName}}, function (err) {});
+                }
+                else {
+                    Book.findOneAndUpdate({"name": bookName}, {
+                        $addToSet: {
+                            review: {
+                                "content": review,
+                                "reviewer": user.account
+                            }
                         }
-                    }
-                }, function (err) {});
+                    }, function (err) {
+                    });
+                }
+                res.send({message:'You recommended [' + bookName + ']'});
             }
 
         });
@@ -119,15 +123,10 @@ router.Recommende = (req, res) => {
                 recommendation:bookId
 
             }
-        }, function (err) {
-            if (err)
-                res.send('Sorry!'+ err);
-            else
-                res.send('You recommended [' + bookName + ']');
-        })
+        }, function (err) {})
     }
     else
-        res.send('Book NOT Found!');
+        res.send({message:'Book NOT Found!'});
 
 }
 //increase like

@@ -118,18 +118,20 @@ describe('Users', function (){
             chai.request(server)
                 .delete('/users/acc=albert')
                 .end(function(err, res) {
+                    expect(res).to.have.status(200);
                     expect(res.body).to.have.property('message').equal('User delete failed!' );
                     done();
                 });
         });
     });
     describe('PUT /users/like=:id', function () {
-        it('should return a message and update datastore that likes increase 1', function(done) {
+        it('should return a message and update datastore that user likes the book', function(done) {
             let bookname = {bookname:'you'};
             chai.request(server)
                 .put('/users/like=5bce50fc6436e42a00965e48')
                 .send(bookname)
                 .end(function(err, res) {
+                    expect(res).to.have.status(200);
                     expect(res.body).to.have.property('message').equal('You liked this book' );
                     done();
                 });
@@ -138,13 +140,59 @@ describe('Users', function (){
 
     });
     describe('PUT /users/unlike=:id', function () {
-        it('should return a message and update datastore that likes decrease 1', function(done) {
+        it('should return a message and update datastore that user unlikes the book', function(done) {
             let bookname = {bookname:'you'};
             chai.request(server)
                 .put('/users/unlike=5bce50fc6436e42a00965e48')
                 .send(bookname)
                 .end(function(err, res) {
+                    expect(res).to.have.status(200);
                     expect(res.body).to.have.property('message').equal('You unliked this book');
+                    done();
+                });
+        });
+    });
+    describe('PUT /users/recommende=:id', function () {
+        it('should return a message and update datastore that user recommended a book and add a review to the book', function(done) {
+            let recommendation = {
+                bookname: 'me' ,
+                id: '5bce51756436e42a00965e4e',
+                review: 'an amazing book'
+            };
+            chai.request(server)
+                .put('/users/recommende=5bce51096436e42a00965e49')
+                .send(recommendation)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('You recommended [me]');
+                    done();
+                });
+        });
+        after(function  (done) {
+            chai.request(server)
+                .get('/books/id=5bce51756436e42a00965e4e')
+                .end(function(err, res) {
+                    let result = _.map(res.body, (book) => {
+                        return { content:book.review[2].content,
+                            reviewer:book.review[2].reviewer};
+                    }  );
+
+                    expect(result).to.include( { content: 'an amazing book', reviewer: 'nb'  } );
+                    done();
+                });
+        });
+        it('should return a message that recommende failed', function(done) {
+            let recommendation = {
+                bookname: 'me' ,
+                id: '5bce51756436e42a00965e4e',
+                review: 'an amazing book'
+            };
+            chai.request(server)
+                .put('/users/recommende=11255')
+                .send(recommendation)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Sorry! Please try it again!');
                     done();
                 });
         });
