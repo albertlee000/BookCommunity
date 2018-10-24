@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73ea91a3-ccbc-4307-aded-5daf4b5c6ffb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-24T092559.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-24T092611.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-24T092627.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-24T092743.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-24T092913.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/books-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/books-test.js" afterDir="false" />
     </list>
@@ -58,7 +51,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="15880" />
+          <entry key="js" value="16089" />
           <entry key="json" value="208" />
           <entry key="txt" value="98" />
           <entry key="www" value="5" />
@@ -67,7 +60,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="208" />
-          <entry key="JavaScript" value="15885" />
+          <entry key="JavaScript" value="16094" />
           <entry key="PLAIN_TEXT" value="98" />
         </counts>
       </usages-collector>
@@ -96,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/books.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="119" column="54" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="54" />
+            <state relative-caret-position="203">
+              <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -108,17 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="309">
+              <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/books-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="135" column="95" selection-start-line="135" selection-start-column="95" selection-end-line="135" selection-end-column="95" />
+            <state relative-caret-position="173">
+              <caret line="211" column="82" selection-start-line="211" selection-start-column="82" selection-end-line="211" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -126,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/users-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1710">
-              <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="101" selection-end-column="11" />
+            <state relative-caret-position="359">
+              <caret line="122" column="7" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="122" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -179,6 +172,7 @@
       <find>like</find>
       <find>query</find>
       <find>add</find>
+      <find>post</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,9 +190,9 @@
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/tests/users-test.js" />
         <option value="$PROJECT_DIR$/models/books.js" />
-        <option value="$PROJECT_DIR$/routes/books.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/tests/books-test.js" />
+        <option value="$PROJECT_DIR$/routes/books.js" />
       </list>
     </option>
   </component>
@@ -2039,12 +2033,12 @@
       <workItem from="1540387122544" duration="2399000" />
       <workItem from="1540390226208" duration="961000" />
       <workItem from="1540393087709" duration="640000" />
-      <workItem from="1540406986526" duration="11021000" />
+      <workItem from="1540406986526" duration="12062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207494000" />
+    <option name="totallyTimeSpent" value="208535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2073,7 +2067,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50105375" side_tool="true" weight="0.5559175" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49947312" visible="true" weight="0.15743756" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49947312" visible="true" weight="0.5559175" />
       <window_info anchor="bottom" id="REST Client" order="11" sideWeight="0.49894625" weight="0.39087948" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2146,31 +2140,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/users-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1710">
-          <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="101" selection-end-column="11" />
+        <state relative-caret-position="359">
+          <caret line="122" column="7" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="122" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/books.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="119" column="54" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="54" />
+        <state relative-caret-position="309">
+          <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/books-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="135" column="95" selection-start-line="135" selection-start-column="95" selection-end-line="135" selection-end-column="95" />
+        <state relative-caret-position="173">
+          <caret line="211" column="82" selection-start-line="211" selection-start-column="82" selection-end-line="211" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/books.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
         </state>
       </provider>
     </entry>

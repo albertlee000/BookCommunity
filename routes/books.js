@@ -88,7 +88,7 @@ router.deleteBookByName = (req,res)=>{
     //make sure book deleted
     Book.findOneAndRemove({ "name" : req.params.bookname },function(err,data) {
         if (err||data == null)
-            res.json({ message: 'Book [.' + req.params.bookname + '] delete failed!'});
+            res.json({ message: 'Book [' + req.params.bookname + '] delete failed!'});
         else
             res.json({ message: 'Book [' + req.params.bookname + '] delete successully!'});
     });
@@ -101,11 +101,11 @@ router.addBook = (req, res) => {
     book.author = req.body.author;
     book.review = req.body.review;
     book.sumary = req.body.sumary;
-    book.save(function(err, book) {
+    book.save(function(err) {
         if (err)
-            res.json({message: 'Book NOT Added!', msg: err});
+            res.json({message: 'Book NOT Added!'});
         else
-            res.json({message: 'Book Successfully Added!', data: book});
+            res.json({message: 'Book Successfully Added!'});
 
     });
 
