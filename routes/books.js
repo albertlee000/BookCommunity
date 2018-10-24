@@ -42,7 +42,7 @@ router.findAllBooks = (req, res) => {
 router.findBookByName = (req,res)=>{
     res.setHeader('Content-Type','application/json');
     Book.find({"name": {$regex: req.params.name, $options:'i'}},function(err, book) {
-        if (err)
+        if (err||book.length==0)
             res.send({Message: 'Sorry! Can\' find this book by name!'});
         else
             res.send(JSON.stringify(book,null,5));

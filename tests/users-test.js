@@ -2,12 +2,11 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../bin/www');
 let expect = chai.expect;
-let datastore = require('../models/users');
+
 chai.use(require('chai-things'));
 chai.use(chaiHttp);
 let _ = require('lodash' );
 describe('Users', function (){
-
     describe('GET /users/id=:id', () => {
         it('should return an user by id', function(done) {
             chai.request(server)
