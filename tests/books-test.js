@@ -65,9 +65,9 @@ describe('Books', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body.length).to.equal(3);
-                    expect(res.body[0].name).to.include('me');
-                    expect(res.body[1].name).to.include('them');
-                    expect(res.body[2].name).to.include('her');
+                    expect(res.body[0].name).to.include('them');
+                    expect(res.body[1].name).to.include('her');
+                    expect(res.body[2].name).to.include('me');
                     done();
                 });
         });

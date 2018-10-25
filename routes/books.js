@@ -100,7 +100,7 @@ router.addBook = (req, res) => {
     book.name = req.body.bookname;
     book.author = req.body.author;
     book.review = req.body.review;
-    book.sumary = req.body.sumary;
+    book.summary = req.body.summary;
     book.save(function(err) {
         if (err)
             res.json({message: 'Book NOT Added!'});
@@ -123,7 +123,7 @@ router.writeSummary = (req, res) => {
     })
 }
 //clear a book's all reviews
-router.cancelReview = (req, res) => {
+router.clearReview = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     Book.findByIdAndUpdate(req.params.id, {$set:{review:""}}, function(err){
         if (err)
