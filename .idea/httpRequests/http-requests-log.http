@@ -1,3 +1,206 @@
+GET http://localhost:3000/users?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-06T120459.200.json
+
+###
+
+GET http://localhost:3000/users?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-06T120318.404.html
+
+###
+
+GET http://localhost:3000/users?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-06T120314.404.html
+
+###
+
+POST http://localhost:3000/books/addBook?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-04T081745.200.json
+
+###
+
+POST http://localhost:3000/books/addBook?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-04T081723.200.json
+
+###
+
+GET http://localhost:3000/books?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-02T104701.200.json
+
+###
+
+GET http://localhost:3000/books?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+###
+
+GET http://localhost:3000/books?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-01T120611.200.json
+
+###
+
+PUT http://localhost:3000/books?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-01T120545.404.html
+
+###
+
+PUT http://localhost:3000/users/recommende=5bd0d4c856a059283002a299?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-11-02T012223.200.json
+
+###
+
+PUT http://localhost:3000/users/recommende=5bd0d4c856a059283002a299?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"her","id":"5bd0d7ffa0fa610ec0cc092d","review":"tired"}
+
+<> 2018-11-02T012146.200.json
+
+###
+
+GET http://localhost:3000/books/like=20.1?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+<> 2018-11-01T100229.200.json
+
+###
+
+GET http://localhost:3000/books/like=a?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+<> 2018-11-01T100219.200.json
+
+###
+
+GET http://localhost:3000/books/like=20.1?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+###
+
+GET http://localhost:3000/books/like=a?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+###
+
+GET http://localhost:3000/books/like=-1?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+<> 2018-11-01T095921.200.json
+
+###
+
+GET http://localhost:3000/books/name=%20?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+<> 2018-11-01T095156.200.json
+
+###
+
+GET http://localhost:3000/books/name=?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+<> 2018-11-01T094942.404.html
+
+###
+
+GET http://localhost:3000/books/name=%20?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"war and peace","author":"someone","summary":"a book"}
+
+<> 2018-11-01T094518.200.json
+
+###
+
 DELETE http://localhost:3000/books/id=5bd22d43999d4526c87a91eb?account=lgd
 Accept: */*
 Cache-Control: no-cache
@@ -332,215 +535,6 @@ Content-Type: application/json
 {"bookname":"war and peace"}
 
 <> 2018-10-25T093819.200.json
-
-###
-
-GET http://localhost:3000/books/like=50?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093815.200.json
-
-###
-
-GET http://localhost:3000/books/like=0?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093807.200.json
-
-###
-
-GET http://localhost:3000/users/id=5bd0d4c856a059283002a299?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093742.200.json
-
-###
-
-GET http://localhost:3000/books/id=5bd0d747a0fa610ec0cc092a?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093722.200.json
-
-###
-
-GET http://localhost:3000/books?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093703.200.json
-
-###
-
-PUT http://localhost:3000/users/like=5bd22794b57b6b330069e913?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093040.200.json
-
-###
-
-PUT http://localhost:3000/users/like=5bd22794b57b6b330069e913?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"booknamme":"war and peace"}
-
-<> 2018-10-25T093012.200.json
-
-###
-
-POST http://localhost:3000/users/addUser?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"account":"albert","psw":"123456","email":"asdad@sina.com"}
-
-<> 2018-10-25T092908.200.json
-
-###
-
-POST http://localhost:3000/books/addBook?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace","author":"someone","summary":"a book"}
-
-<> 2018-10-25T092824.200.json
-
-###
-
-GET http://localhost:3000/users/rank?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092732.200.json
-
-###
-
-GET http://localhost:3000/users/findreview=5bd0d4e956a059283002a29b?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092659.200.json
-
-###
-
-GET http://localhost:3000/users/findreview=5bd0d4de56a059283002a29a?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092638.200.json
-
-###
-
-GET http://localhost:3000/books/like=10000?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092611.200.json
-
-###
-
-GET http://localhost:3000/books/like=50?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092604.200.json
-
-###
-
-GET http://localhost:3000/books/like=10?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092556.200.json
-
-###
-
-GET http://localhost:3000/books/like=0?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092543.200.json
-
-###
-
-GET http://localhost:3000/users/id=5bd0d4c856a059283002a299?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092512.200.json
-
-###
-
-GET http://localhost:3000/books/id=5bd0d747a0fa610ec0cc092a?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092452.200.json
-
-###
-
-GET http://localhost:3000/books?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"her","review":"what a nice book"}
-
-<> 2018-10-25T092430.200.json
 
 ###
 

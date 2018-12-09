@@ -1,6 +1,7 @@
-let User = require('../models/users');
-let Book = require('../models/books');
-let express = require('express');
+import User from '../models/users';
+import Book from '../models/books';
+import express from 'express';
+
 let router = express.Router();
 let mongoose = require('mongoose');
 
@@ -28,6 +29,16 @@ router.addUser = (req, res) => {
             res.json({ message: 'User created successfully!'});
     });
 
+}
+//get all users
+router.findAllUsers = (req, res) => {
+    res.setHeader('Content-Type','application/json');
+    User.find(function(err, user) {
+        if (err)
+            res.send(err);
+
+        res.send(JSON.stringify(user,null,5));
+    });
 }
 //find users by id
 router.findUserByID = (req,res)=>{
@@ -86,12 +97,12 @@ router.Recommende = (req, res) => {
             if (err)
                 res.send({message: 'Sorry! Please try it again!'});
             else {
-                for (i = 0; i < user.recommendation.length; i++) {
-                    if (user.recommendation[i] == bookId) {
+                for (let i = 0; i < user.recommendation.length; i++) {
+                    if (user.recommendation[i] === bookId) {
                         first = false;
                     }
                 }
-                if (first == true) {
+                if (first === true) {
                     Book.findOneAndUpdate({"name": bookName}, {
                         $addToSet: {
                             review: {
@@ -136,15 +147,15 @@ router.increaseLike = (req, res) => {
     let id = req.params.id;
     //make sure like can be liked
     User.findById(id , function(err,user) {
-        for(i = 0; i < user.like.length;i++){
-            if(user.like[i] == bookName) {
+        for(let i = 0; i < user.like.length;i++){
+            if(user.like[i] === bookName) {
                 canLike = false;
             }
         }
     });
     //update usersdb and booksdb if can like this book
     Book.find({"name":bookName} , function(err) {
-        if(canLike == true){
+        if(canLike === true){
             User.update({"_id":id},{$addToSet:{like:bookName}},function (err){});
             Book.update({"name":bookName},{$inc:{'like':1}},function (err){});
             res.send({message:'You liked this book'});
@@ -161,15 +172,15 @@ router.cancelLike = (req, res) => {
     let id = req.params.id;
     //make sure like can be cancelled
     User.findById(id , function(err,user) {
-        for(i = 0; i < user.like.length;i++){
-            if(user.like[i] == bookName) {
+        for(let i = 0; i < user.like.length;i++){
+            if(user.like[i] === bookName) {
                 canCancel = true;
             }
         }
     });
     //update Userdb and Bookdb after unliked
     Book.find({"name":bookName} , function(err) {
-        if(canCancel == true){
+        if(canCancel === true){
             User.update({"_id":id},{$pull:{like:bookName}},function (err){});
             Book.update({"name":bookName},{$inc:{'like':-1}},function (err){});
             res.send({message:'You unliked this book'});

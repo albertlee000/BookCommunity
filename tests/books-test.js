@@ -29,7 +29,7 @@ describe('Books', function (){
                     expect(res.body.length).to.equal(1);
                     let result = _.map(res.body, (book) => {
                         return { name: book.name,
-                            author: book.author }
+                            author: book.author };
                     });
                     expect(result).to.include( { name: 'me', author: 'gf' } );
                     done();
@@ -53,7 +53,7 @@ describe('Books', function (){
                     expect(res.body.length).to.equal(1);
                     let result = _.map(res.body, (book) => {
                         return { name: book.name,
-                            author: book.author }
+                            author: book.author };
                     });
                     expect(result).to.include( { name: 'them', author: 'bgg' } );
                     done();

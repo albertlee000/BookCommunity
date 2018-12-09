@@ -1,11 +1,16 @@
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let server = require('../bin/www');
+import chai from 'chai';
+import chaiHttp from 'chai-http' ;
+import server from '../bin/www';
 let expect = chai.expect;
+
+import _ from 'lodash';
+import things from 'chai-things';
+chai.use( things);
+chai.use(chaiHttp);
 
 chai.use(require('chai-things'));
 chai.use(chaiHttp);
-let _ = require('lodash' );
+
 describe('Users', function (){
     describe('GET /users/id=:id', () => {
         it('should return an user by id', function(done) {
@@ -17,7 +22,7 @@ describe('Users', function (){
                     expect(res.body.length).to.equal(1);
                     let result = _.map(res.body, (user) => {
                         return { acc: user.account,
-                            psw: user.psw }
+                            psw: user.psw };
                     });
                     expect(result).to.include( { acc: 'qqq', psw: '123456' } );
                     done();
@@ -35,7 +40,7 @@ describe('Users', function (){
                     expect(res.body.length).to.equal(1);
                     let result = _.map(res.body, (user) => {
                         return { acc: user.account,
-                            psw: user.psw }
+                            psw: user.psw };
                     });
                     expect(result).to.include( { acc: 'gg', psw: '123456' } );
                     done();
