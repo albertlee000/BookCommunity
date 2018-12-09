@@ -2,3 +2,12 @@ dist: trusty
 language: node_js
 node_js:
 - "10"
+branches:
+  only:
+  development
+notifications:
+  email:
+    recipients:
+    - 675375410@qq.com
+    on_success: always        # default: change
+    on_failure: never       # default: always
