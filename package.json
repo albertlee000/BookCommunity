@@ -8,6 +8,7 @@
     "lint": "esw  ./tests",
     "lint:watch": "npm run lint -- --watch",
     "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register tests/users-test.js",
     "test:watch": "npm run test -- --watch",
     "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
     "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
