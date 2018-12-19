@@ -3,7 +3,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-var mongodbUri ='mongodb://lzh97:brager9716@ds125693.mlab.com:25693/book';
+var mongodbUri ='mongodb://lzh:brager9716@ds139534.mlab.com:39534/heroku_2c30gjjd';
 mongoose.connect(mongodbUri);
 let db = mongoose.connection;
 db.on('error', function (err) {
