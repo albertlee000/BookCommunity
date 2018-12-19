@@ -50,6 +50,16 @@ router.findUserByID = (req,res)=>{
             res.send(JSON.stringify(user,null,5));
     });
 }
+//return an user's id by account
+router.findIDByName = (req,res)=>{
+    res.setHeader('Content-Type','application/json');
+    User.find({ "account" : req.params.account },function(err, user) {
+        if (err)
+            res.send({Message: 'Sorry! ID Not Found !'});
+        else
+            res.send(user[0]._id);
+    });
+}
 //find users by account
 router.findUserByAccount = (req,res)=>{
     res.setHeader('Content-Type','application/json');
@@ -145,7 +155,7 @@ router.increaseLike = (req, res) => {
     let canLike = true;
     let bookName = req.body.bookname;
     let id = req.params.id;
-    //make sure like can be liked
+    //make sure book can be liked
     User.findById(id , function(err,user) {
         for(let i = 0; i < user.like.length;i++){
             if(user.like[i] === bookName) {
