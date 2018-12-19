@@ -5,6 +5,17 @@ Content-Type: application/json
 
 {"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
 
+<> 2018-12-19T011510.200.json
+
+###
+
+GET http://localhost:3000/users?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
 <> 2018-12-06T120459.200.json
 
 ###
@@ -524,17 +535,6 @@ Content-Type: application/json
 {"bookname":"war and peace"}
 
 <> 2018-10-25T093854.200.json
-
-###
-
-GET http://localhost:3000/books/like=10000?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093819.200.json
 
 ###
 

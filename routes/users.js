@@ -1,6 +1,6 @@
-import User from '../models/users';
-import Book from '../models/books';
-import express from 'express';
+var User = require('../models/users') ;
+var Book = require('../models/books');
+var express = require('express');
 
 let router = express.Router();
 let mongoose = require('mongoose');
