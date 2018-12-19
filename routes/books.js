@@ -1,7 +1,7 @@
-let Book = require('../models/books');
-let express = require('express');
+import Book from '../models/books';
+import express from 'express';
 let router = express.Router();
-let mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 var mongodbUri ='mongodb://lzh97:brager9716@ds125693.mlab.com:25693/book';
 mongoose.connect(mongodbUri);
