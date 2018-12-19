@@ -137,4 +137,14 @@ router.clearReview = (req, res) => {
             res.send({message:'Reviews clear successfully!!'});
     })
 }
+//edit books information
+router.editBook = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    Book.findByIdAndUpdate(req.params.id, {$set:{summary:req.body.summary,name:req.body.bookname,author:req.body.author}}, function(err){
+        if (err)
+            res.send({message:'Book Edited Failed...'});
+        else
+            res.send({message:'Book Edited Successfully!!'});
+    })
+}
 module.exports = router;

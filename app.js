@@ -30,6 +30,7 @@ app.get('/books/id=:id', books.findBookByID);//find BOOK by ID
 app.get('/books/name=:name', books.findBookByName);//find BOOK by NAME
 app.get('/users/id=:id', users.findUserByID);//find USER by ID
 app.get('/users/acc=:account', users.findUserByAccount);//find USER by ACCOUNT
+app.get('/users/getid=:account', users.findIDByName);
 app.get('/books/like=:like',books.findBookByLike);
 app.get('/users/findreview=:id',users.findOnesReviews);
 app.get('/users/rank',users.rankBookByLikes);
@@ -41,6 +42,7 @@ app.put('/users/like=:id',users.increaseLike);
 app.put('/users/unlike=:id',users.cancelLike);
 app.put('/books/writeSummary=:id',books.writeSummary);
 app.put('/books/clearReview=:id',books.clearReview);
+app.put('/books/editBook=:id',books.editBook);
 app.put('/users/recommende=:id',users.Recommende);
 
 app.delete('/books/id=:id',books.deleteBookByID);

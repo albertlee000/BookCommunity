@@ -44,6 +44,16 @@ router.findAllUsers = (req, res) => {
         res.send(JSON.stringify(user,null,5));
     });
 }
+//return an user's id by account
+router.findIDByName = (req,res)=>{
+    res.setHeader('Content-Type','application/json');
+    User.find({ "account" : req.params.account },function(err, user) {
+        if (err)
+            res.send({Message: 'Sorry! ID Not Found !'});
+        else
+            res.send(user[0]._id);
+    });
+}
 //find users by id
 router.findUserByID = (req,res)=>{
     res.setHeader('Content-Type','application/json');
