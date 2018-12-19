@@ -12,7 +12,7 @@
     "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
     "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
     "clean": "rimraf ./lib && mkdir lib",
-    "start": "npm-run-all test build server"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
