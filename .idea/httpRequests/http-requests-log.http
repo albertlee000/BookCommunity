@@ -1,3 +1,25 @@
+GET http://localhost:3000/users/id=5bd0d4fa56a059283002a29d?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-19T015451.200.json
+
+###
+
+GET http://localhost:3000/users?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-19T015437.200.json
+
+###
+
 GET http://localhost:3000/users?account=lgd
 Accept: */*
 Cache-Control: no-cache
@@ -513,28 +535,6 @@ Content-Type: application/json
 {"bookname":"you"}
 
 <> 2018-10-25T094019.200.json
-
-###
-
-GET http://localhost:3000/users/rank?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093921.200.json
-
-###
-
-GET http://localhost:3000/users/findreview=5bd0d4e956a059283002a29b?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"bookname":"war and peace"}
-
-<> 2018-10-25T093854.200.json
 
 ###
 
