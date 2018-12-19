@@ -25,6 +25,7 @@
     "http-errors": "~1.6.2",
     "mongo": "^0.1.0",
     "mongodb": "^3.1.7",
+    "mongodb-uri": "^0.9.7",
     "mongoose": "^5.3.2",
     "morgan": "~1.9.0"
   },

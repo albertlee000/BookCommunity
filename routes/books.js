@@ -3,8 +3,13 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-var mongodbUri ='mongodb://lzh:brager9716@ds139534.mlab.com:39534/heroku_2c30gjjd';
-mongoose.connect(mongodbUri);
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
+    user: 'lzh', pass: 'brager9716' };
+var mongodbUri = 'mongodb://ds139534.mlab.com:39534/heroku_2c30gjjd';
+var mongooseUri = require('mongodb-uri').formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri,options);
 let db = mongoose.connection;
 db.on('error', function (err) {
     console.log('Unable to Connect to [ ' + db.name + ' ]', err);
