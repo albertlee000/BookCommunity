@@ -15,7 +15,7 @@
     "clean": "rimraf ./lib && mkdir lib",
     "coverage": "cross-env NODE_ENV=test PORT=4000 nyc mocha tests/users-test.js",
     "publish-coverage": "nyc report --reporter=text-lcov | coveralls",
-    "start": "npm-run-all test build server"
+    "start": "node app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
