@@ -1,3 +1,14 @@
+GET http://localhost:3000/users/getid=qqq?account=lgd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"bookname":"qi","id":"5bdb9eb0fb6fc074abb4df49","review":"test"}
+
+<> 2018-12-19T053209.404.html
+
+###
+
 GET http://localhost:3000/books?account=lgd
 Accept: */*
 Cache-Control: no-cache
@@ -524,17 +535,6 @@ Content-Type: application/json
 {"summary":"a book"}
 
 <> 2018-10-25T094218.404.html
-
-###
-
-PUT http://localhost:3000/books/clearReview=5bd0d7ffa0fa610ec0cc092d?account=lgd
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"summary":"a book"}
-
-<> 2018-10-25T094204.404.html
 
 ###
 
